@@ -34,20 +34,6 @@ This repository is organized into the following folders:
 
 - **`rf_fingerprint_env.yml`**: YAML file for setting up the same environment using Conda.
 
-<!--
-- **data/**: Contains the dataset folder, which includes the data captured for this project. Due to the large size of the dataset, it is hosted externally. You can download the dataset from the following link:
-
-- [Download Dataset from Google Drive]([https://drive.google.com/file/d/1t1jih0RLrD_XSyBUC3d8pBvOSxNzEbHS/view?usp=drive_link](https://drive.google.com/file/d/1Hj6V6LVJnZMDRaQczt9gFOyiJhImjWnx/view?pli=1)), see the [Dataset README](Dataset%20README.md).
-
-- **nfc_rfml/**: Contains the source code used to preprocess the signals, train the machine learning models, and test their performance. Detailed usage instructions can be found in the [project README](nfc_rfml/README.md).
-
-- **notebooks/**: Houses the Jupyter notebooks used during the analysis and prototyping phases of the project. These notebooks provide insights into the exploratory data analysis and model prototyping processes.
-
-- **report/**: Contains the LaTeX source files and the compiled PDF of the report. This folder also includes the bibliography and the figures used in the report.
-
-- **scripts/**: Contains small utility programs, such as the script used for data acquisition. These scripts are essential for setting up the experimental environment.
--->
-
 ## **Dataset**
 
 The data used in this project are in I/Q format, collected using the BladeRF AX4 and GNU Radio software. It consists of raw signal data captured during various stages of the experiment. The dataset is crucial for reproducing the experiments and validating the PLA approach. 
