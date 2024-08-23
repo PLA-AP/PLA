@@ -28,7 +28,7 @@ This repository is organized into the following folders:
   - **`preprocessing.py`**: Handles the preprocessing of raw data.
 
 - **`dataset/`**: Contains the processed data and any datasets used for training and validation.
-  - **`processed_data.h5`**: The HDF5 file containing processed RF fingerprint data for each device.
+  - **`processed_fingerprints_data.h5`**: The HDF5 file containing processed RF fingerprint data for each device.
 
 - **`RF_Fingerprint.py`**: The main script for training the RF fingerprinting models.
 
