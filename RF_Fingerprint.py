@@ -15,7 +15,7 @@ import joblib
 
 # Define data paths and processed data file
 DATA_DIRECTORY = r'dataset' # Directory containing the raw data files
-PROCESSED_DATA_PATH = r'processed_fingerprints_data.h5' # Path to save the processed fingerprints data
+PROCESSED_DATA_PATH = r'dataset/processed_fingerprints_data.h5' # Path to save the processed fingerprints data
 
 # Check if processed data exists
 if os.path.exists(PROCESSED_DATA_PATH):
