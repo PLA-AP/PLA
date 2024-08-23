@@ -38,7 +38,7 @@ This repository is organized into the following folders:
 <!--
 - **data/**: Contains the dataset folder, which includes the data captured for this project. Due to the large size of the dataset, it is hosted externally. You can download the dataset from the following link:
 
-- [Download Dataset from Google Drive](https://drive.google.com/file/d/1t1jih0RLrD_XSyBUC3d8pBvOSxNzEbHS/view?usp=drive_link), see the [Dataset README](Dataset%20README.md).
+- [Download Dataset from Google Drive]([https://drive.google.com/file/d/1t1jih0RLrD_XSyBUC3d8pBvOSxNzEbHS/view?usp=drive_link](https://drive.google.com/file/d/1Hj6V6LVJnZMDRaQczt9gFOyiJhImjWnx/view?pli=1)), see the [Dataset README](Dataset%20README.md).
 
 - **nfc_rfml/**: Contains the source code used to preprocess the signals, train the machine learning models, and test their performance. Detailed usage instructions can be found in the [project README](nfc_rfml/README.md).
 
@@ -49,11 +49,12 @@ This repository is organized into the following folders:
 - **scripts/**: Contains small utility programs, such as the script used for data acquisition. These scripts are essential for setting up the experimental environment.
 -->
 
-<!--## **Dataset**
+## **Dataset**
 
 The dataset used in this project is in IQ format, collected using the BladeRF AX4 and GNU Radio software. It consists of raw signal data captured during various stages of the experiment. The dataset is crucial for reproducing the experiments and validating the PLA approach. 
 
-**Note:** Due to the large size of the dataset, it is stored in an external Drive please refer to the instructions in the [dataset README](Dataset%20README.md). If you need assistance open an issue in this repository.-->
+**Note:** Due to the large size of the dataset, it is stored in an external Drive.  You can download the dataset from the following link: 
+[Download Dataset from Google Drive]([https://drive.google.com/file/d/1t1jih0RLrD_XSyBUC3d8pBvOSxNzEbHS/view?usp=drive_link](https://drive.google.com/file/d/1Hj6V6LVJnZMDRaQczt9gFOyiJhImjWnx/view?pli=1))
 
 ## **How to Run**
 
