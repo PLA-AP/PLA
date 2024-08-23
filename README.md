@@ -53,8 +53,8 @@ This repository is organized into the following folders:
 
 The dataset used in this project is in IQ format, collected using the BladeRF AX4 and GNU Radio software. It consists of raw signal data captured during various stages of the experiment. The dataset is crucial for reproducing the experiments and validating the PLA approach. 
 
-**Note:** Due to the large size of the dataset, it is stored in an external Drive.  You can download the dataset from the following link: 
-[Download Dataset from Google Drive]([https://drive.google.com/file/d/1t1jih0RLrD_XSyBUC3d8pBvOSxNzEbHS/view?usp=drive_link](https://drive.google.com/file/d/1Hj6V6LVJnZMDRaQczt9gFOyiJhImjWnx/view?pli=1))
+**Note:** Due to the large size of the dataset, it is stored in an external Drive. You can download the dataset from the following link: 
+[Download Dataset from Google Drive](https://drive.google.com/file/d/1Hj6V6LVJnZMDRaQczt9gFOyiJhImjWnx/view?pli=1)
 
 ## **How to Run**
 
