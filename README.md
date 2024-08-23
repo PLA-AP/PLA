@@ -95,7 +95,8 @@ Evaluation of the model's performance can be done using the functions provided i
 
 ## **Documentation and Support**
 
-For detailed instructions on setting up the environment, running the experiments, and interpreting the results, please refer to the documentation within each folder. If you encounter any issues or have questions, feel free to open an issue in this repository.
+For detailed instructions on setting up the environment, running experiments, and interpreting results, please refer to the documentation and the paper. If you encounter any issues or have questions, feel free to open an issue in this repository.
+
 ## Citation
 
 If you use this code in your research, please cite the following paper:
