@@ -26,14 +26,13 @@ This repository is organized into the following folders:
   - **`features_generation.py`**: Includes methods for generating features from raw data.
   - **`features_selections.py`**: Contains functions for selecting the most relevant features.
   - **`preprocessing.py`**: Handles the preprocessing of raw data.
-  - **`setup_trials.py`**: Manages the setup of different training and testing trials.
 
 - **`dataset/`**: Contains the processed data and any datasets used for training and validation.
   - **`processed_data.h5`**: The HDF5 file containing processed RF fingerprint data for each device.
 
-- **`rf_fingerprint_training.py`**: The main script for training the RF fingerprinting models.
+- **`RF_Fingerprint.py`**: The main script for training the RF fingerprinting models.
 
-- **`training_env.yml`**: YAML file for setting up the same environment using Conda.
+- **`rf_fingerprint_env.yml`**: YAML file for setting up the same environment using Conda.
 
 <!--
 - **data/**: Contains the dataset folder, which includes the data captured for this project. Due to the large size of the dataset, it is hosted externally. You can download the dataset from the following link:
