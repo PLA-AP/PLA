@@ -64,34 +64,34 @@ To reproduce the main experiment presented in the paper, follow these steps:
 Before you begin, ensure you have met the following requirements:
 
 - **Python version**: 3.x
-- **Dependencies**: All necessary dependencies are listed in the `training_env.yml` file.
+- **Dependencies**: All necessary dependencies are listed in the `rf_fingerprint_env.yml` file.
 
 ### Setting Up the Environment
 
-To set up the environment, you can use the `training_env.yml` file:
+To set up the environment, you can use the `rf_fingerprint_env.yml` file:
 
 ```bash
-conda env create -f training_env.yml
+conda env create -f rf_fingerprint_env.yml
 conda activate <your-environment-name>
 ```
 
 ### Data Preparation
 
-The data required for training is provided in the `dataset/processed_data.h5` file. This file contains the processed RF fingerprint data for each device, which is used to train the models.
+The data required for training is provided in the `dataset/processed_fingerprints_data.h5` file. This file contains the processed RF fingerprint data for each device, which is used to train the models.
 
 ### Training the Model
 
-To train the RF fingerprinting model, run the `rf_fingerprint_training.py` script:
+To train the RF fingerprinting model, run the `RF_Fingerprint.py` script:
 
 ```bash
-python rf_fingerprint_training.py
+python RF_Fingerprint.py
 ```
 
 This script will load the processed data, train the model, and validate its performance.
 
 ### Evaluating the Model
 
-Evaluation of the model's performance can be done using the functions provided in the `evaluation.py` module. The script `rf_fingerprint_training.py` includes an evaluation phase, but you can run additional evaluations as needed.
+Evaluation of the model's performance can be done using the functions provided in the `evaluation.py` module. The script `RF_Fingerprint.py` includes an evaluation phase, but you can run additional evaluations as needed.
 
 ## **Documentation and Support**
 
