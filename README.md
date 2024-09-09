@@ -132,7 +132,7 @@ The code is set up to test one specific scenario (Trial 1) by default. Two other
 These changes will allow you to test the performance of different models, feature selection methods, and scenarios as discussed in the paper.
 ### **Key Results from the RF Fingerprinting Model**
 The following figure illustrates the True Detection Rate (TDR) and False Detection Rate (FDR) for different combinations of feature selection (FS) methods and machine learning (ML) models across three scenarios.
-![Authentication Rate for different combinations of FS and ML models](path_to_image/Screenshot_from_2024-09-09_11-38-07.png)
+![Authentication Rate for different combinations of FS and ML models](Main Results.png)
 
 Each subfigure shows the performance across the three scenarios (Scenario 1, Scenario 2, Scenario 3) and for different devices. The results demonstrate the variations in detection rates depending on the combination of FS methods and ML models used.
 
