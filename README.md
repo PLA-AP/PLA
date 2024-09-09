@@ -104,9 +104,9 @@ This section summarizes the main results you should expect when running the prov
     
 - **Paper Reference**: This example corresponds to the experiments detailed in Section 5.2.1 of the paper, where the combination of ANOVA for feature selection and Random Forest is evaluated for its effectiveness in device authentication.
   
- **Testing Other Models and Scenarios**
+ **Testing Other Models and Scenarios**:
 If you want to test other combinations of feature selection methods and machine learning models, or run experiments under different scenarios, you can easily do so by modifying the code:
-#### **Feature Selection Methods**
+##### **Feature Selection Methods**
 We have tested four different feature selection methods: Mutual Information (MI), Recursive Feature Elimination (RFE), Principal Component Analysis (PCA), and ANOVA. The default method used in the provided code is **ANOVA**. To switch to a different feature selection method, modify the `method` parameter in the `train_model_per_trial` function call:
 
 ```python
