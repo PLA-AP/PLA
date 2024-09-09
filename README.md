@@ -89,6 +89,50 @@ This script will load the processed data, train the model, and validate its perf
 
 Evaluation of the model's performance can be done using the functions provided in the `evaluation.py` module. The script `RF_Fingerprint.py` includes an evaluation phase, but you can run additional evaluations as needed.
 
+## **Main Results**
+
+This section summarizes the main results you should expect when running the provided code, as discussed in our paper.
+
+### **Minimal Working Example**
+
+**Model Demonstrated**: The minimal working example focuses on the **RF fingerprinting model using ANOVA for feature selection and Random Forest (RnF) as the classifier**, applied in **Scenario 1**, which was found to be the most performant combination.
+- **Expected Output**: When you run the `RF_Fingerprint.py` script with the default settings, you should expect:
+  - **True Detection Rate (TDR) for Authorized Nodes**: The script will output the TDR, which indicates the proportion of correctly identified authorized nodes.
+  - **False Detection Rate (FDR) for Authorized Nodes**: The FDR for authorized nodes, indicating any false positives among them.
+  - **False Detection Rate (FDR) for Malicious Nodes**: The FDR for malicious nodes, showing the rate of false negatives, where malicious nodes are incorrectly identified as authorized.
+- **Paper Reference**: This example aligns with the experiments detailed in Section 5.2.1. of the paper, where we evaluate the use of ANOVA for feature selection and Random Forest for classification in device authentication.
+  
+- ### **Testing Other Models and Scenarios**
+If you want to test other combinations of feature selection methods and machine learning models, or run experiments under different scenarios, you can easily do so by modifying the code:
+#### **Feature Selection Methods**
+We have tested four different feature selection methods: Mutual Information (MI), Recursive Feature Elimination (RFE), Principal Component Analysis (PCA), and ANOVA. The default method used in the provided code is **ANOVA**. To switch to a different feature selection method, modify the `method` parameter in the `train_model_per_trial` function call:
+
+```python
+# Change 'method' to one of the following: 'mi', 'rfe', 'pca', or 'anova'
+results = train_model_per_trial(device_rf_data, trials_info, model_type, model_params_rnf, method="mi")
+```
+#### **Machine Learning Models**
+We have evaluated the performance of five different machine learning models: Random Forest (RnF), Support Vector Machine (SVM), XGBoost (XGB), Logistic Regression (LR), and K-Nearest Neighbors (KNN). The default model used in the provided code is Random Forest. To test a different model, change the `model_type` and corresponding `model_params` in the `train_model_per_trial` function call:
+
+# Example: Switch to SVM
+```python
+model_type = 'svc'
+results = train_model_per_trial(device_rf_data, trials_info, model_type, model_params_svc, method="anova")
+```
+#### **Scenarios**  
+The code is set up to test one specific scenario (Trial 1) by default. Two other scenarios (Trial 2 and Trial 3) are commented out. To test these scenarios, simply uncomment the relevant section of the `trials_info` dictionary:
+```python
+# Uncomment to test Trial 2
+# trials_info = {
+#     'trial_2': {
+#         'authorized': ['device10', 'device6', 'device12', 'device3', 'device11', 'device1'],
+#         'rogue': ['device2', 'device5', 'device8', 'device7', 'device4', 'device9']
+#     }}
+```
+These changes will allow you to test the performance of different models, feature selection methods, and scenarios as discussed in the paper.
+### **Key Results from the RF Fingerprinting Model**
+
+
 ## **Documentation and Support**
 
 For detailed instructions on setting up the environment, running experiments, and interpreting results, please refer to the documentation and the paper. If you encounter any issues or have questions, feel free to open an issue in this repository.
