@@ -95,7 +95,7 @@ This section summarizes the main results you should expect when running the prov
 
 ### **Minimal Working Example**
 
-**Model Demonstrated**: This minimal working example focuses on the RF fingerprinting model, **which uses ANOVA for feature selection and Random Forest (RnF) as the classifier**. This combination has been identified as the most performant in our evaluations. When running the RF_Fingerprint.py script with its default settings, **Scenario 1** is applied.
+**Model Demonstrated**: This minimal working example focuses on the RF fingerprinting model, **which uses ANOVA for feature selection and Random Forest (RnF) as the classifier**. This combination has been identified as the most performant in our evaluations. When running the `RF_Fingerprint.py` script with its default settings, **Scenario 1** is applied.
 
 **Expected Output**: When you run the `RF_Fingerprint.py` script with the default settings, you will obtain the following performance metrics:
   - **TDR (True Detection Rate)** for authorized nodes.
