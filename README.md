@@ -17,8 +17,8 @@ This repository includes all necessary code, datasets, and documentation to repr
 
 - **`Operating Systems`**: Linux, Windows. 
 - **`Python Version`**: 3.x
-- **`CPU`**:  Intel i7 
-- **`Specialized Hardware`**: BladeRF AX4 for data collection
+- **`CPU`**:  Intel i7. 
+- **`Specialized Hardware`**: BladeRF AX4 for data collection.
 
 
 This artifact is supported on the following environments:
