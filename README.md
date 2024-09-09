@@ -96,10 +96,10 @@ This section summarizes the main results you should expect when running the prov
 ### **Minimal Working Example**
 
 **Model Demonstrated**: The minimal working example focuses on the **RF fingerprinting model using ANOVA for feature selection and Random Forest (RnF) as the classifier**, applied in **Scenario 1**, which was found to be the most performant combination.
-- **Expected Output**: When you run the `RF_Fingerprint.py` script with the default settings, you should expect:
-  - **True Detection Rate (TDR) for Authorized Nodes**: The script will output the TDR, which indicates the proportion of correctly identified authorized nodes.
-  - **False Detection Rate (FDR) for Authorized Nodes**: The FDR for authorized nodes, indicating any false positives among them.
-  - **False Detection Rate (FDR) for Malicious Nodes**: The FDR for malicious nodes, showing the rate of false negatives, where malicious nodes are incorrectly identified as authorized.
+**Expected Output**: When you run the `RF_Fingerprint.py` script with the default settings, you will obtain the following metrics:
+  - **TDR (True Detection Rate)** for authorized nodes.
+  - **FDR (False Detection Rate)** for authorized nodes.
+  - **TDR (True Detection Rate)** for malicious nodes.
 - **Paper Reference**: This example aligns with the experiments detailed in Section 5.2.1. of the paper, where we evaluate the use of ANOVA for feature selection and Random Forest for classification in device authentication.
   
 - ### **Testing Other Models and Scenarios**
