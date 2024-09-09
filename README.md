@@ -14,6 +14,7 @@ Machine learning (ML) models are utilized to perform device authentication witho
 This repository includes all necessary code, datasets, and documentation to reproduce the results and explore the PLA method under different scenarios.
 
 ## **Supported Environments and Hardware Requirements**
+The code and models are supported on the following environments and hardware configurations:
 
 - **`Operating Systems`**: Windows 11.
 - **`Processor`**: 12th Gen Intel® Core™ i7-12800H, 14 cores, 2.4 GHz base clock speed.
@@ -21,8 +22,6 @@ This repository includes all necessary code, datasets, and documentation to repr
 - **`Python Version`**: 3.x 
 - **`Specialized Hardware`**: BladeRF AX4 for data collection.
 
-
-This artifact is supported on the following environments:
 
 ## **Repository Structure**
 
