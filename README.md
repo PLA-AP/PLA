@@ -15,9 +15,10 @@ This repository includes all necessary code, datasets, and documentation to repr
 
 ## **Supported Environments and Hardware Requirements**
 
-- **`Operating Systems`**: Linux, Windows. 
-- **`Python Version`**: 3.x
-- **`CPU`**:  Intel i7. 
+- **`Operating Systems`**: Windows 11.
+- **`Processor`**: 12th Gen Intel® Core™ i7-12800H, 14 cores, 2.4 GHz base clock speed.
+- **`Memory`**: 32 GB RAM.
+- **`Python Version`**: 3.x 
 - **`Specialized Hardware`**: BladeRF AX4 for data collection.
 
 
