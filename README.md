@@ -97,11 +97,12 @@ This section summarizes the main results you should expect when running the prov
 
 **Model Demonstrated**: This minimal working example focuses on the RF fingerprinting model, **which uses ANOVA for feature selection and Random Forest (RnF) as the classifier**. This combination has been identified as the most performant in our evaluations. When running the RF_Fingerprint.py script with its default settings, **Scenario 1** is applied.
 
-**Expected Output**: When you run the `RF_Fingerprint.py` script with the default settings, you will obtain the following metrics:
+**Expected Output**: When you run the `RF_Fingerprint.py` script with the default settings, you will obtain the following performance metrics:
   - **TDR (True Detection Rate)** for authorized nodes.
   - **FDR (False Detection Rate)** for authorized nodes.
   - **TDR (True Detection Rate)** for malicious nodes.
-- **Paper Reference**: This example aligns with the experiments detailed in Section 5.2.1. of the paper, where we evaluate the use of ANOVA for feature selection and Random Forest for classification in device authentication.
+    
+- **Paper Reference**: This example corresponds to the experiments detailed in Section 5.2.1 of the paper, where the combination of ANOVA for feature selection and Random Forest for classification is evaluated for its effectiveness in device authentication.
   
 - ### **Testing Other Models and Scenarios**
 If you want to test other combinations of feature selection methods and machine learning models, or run experiments under different scenarios, you can easily do so by modifying the code:
