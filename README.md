@@ -102,7 +102,7 @@ This section summarizes the main results you should expect when running the prov
   - **FDR (False Detection Rate)** for authorized nodes.
   - **TDR (True Detection Rate)** for malicious nodes.
     
-- **Paper Reference**: This example corresponds to the experiments detailed in Section 5.2.1 of the paper, where the combination of ANOVA for feature selection and Random Forest for classification is evaluated for its effectiveness in device authentication.
+- **Paper Reference**: This example corresponds to the experiments detailed in Section 5.2.1 of the paper, where the combination of ANOVA for feature selection and Random Forest is evaluated for its effectiveness in device authentication.
   
  **Testing Other Models and Scenarios**
 If you want to test other combinations of feature selection methods and machine learning models, or run experiments under different scenarios, you can easily do so by modifying the code:
