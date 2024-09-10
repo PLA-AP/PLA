@@ -15,17 +15,19 @@ def select_features(X, y, n_features_to_select, method="anova"):
     - X (np.ndarray): Feature matrix.
     - y (np.array): Labels.
     - n_features_to_select (int): Number of top features to select.
-    - method (str): The feature selection method to use. Options: "relieff", "mutual_info", "anova", "pca".
+    - method (str): The feature selection method to use. Options: "rfe", "mutual_info", "anova", "pca".
 
     Returns:
     - Tuple[np.ndarray, np.ndarray]: The reduced feature matrix and the indices of the selected features.
     """
-    if method == "relieff":
-        # Feature Selection using ReliefF algorithm
-        relief = ReliefF(n_neighbors=100)
-        relief.fit(X, y)
-        top_features_indices = np.argsort(relief.feature_importances_)[::-1][:n_features_to_select]
-        return X[:, top_features_indices], top_features_indices
+    if method == "rfe":
+        # Feature Selection using Recursive Feature Elimination (RFE) with Logistic Regression
+        estimator = LogisticRegression(max_iter=500)
+        selector = RFE(estimator, n_features_to_select=n_features_to_select, step=1)
+        selector.fit(X, y)
+        X_selected = selector.transform(X)
+        selected_indices = selector.get_support(indices=True)
+        return X_selected, selected_indices
     
     elif method == "mutual_info":
         # Feature Selection using Mutual Information
