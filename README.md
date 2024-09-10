@@ -110,8 +110,8 @@ If you want to test other combinations of feature selection methods and machine 
 We have tested four different feature selection methods: Mutual Information (MI), Recursive Feature Elimination (RFE), Principal Component Analysis (PCA), and ANOVA. The default method used in the provided code is **ANOVA**. To switch to a different feature selection method, modify the `method` parameter in the `train_model_per_trial` function call:
 
 ```python
-# Change 'method' to one of the following: 'mi', 'rfe', 'pca', or 'anova'
-results = train_model_per_trial(device_rf_data, trials_info, model_type, model_params_rnf, method="mi")
+# Change 'method' to one of the following: 'mutual_info', 'rfe', 'pca', or 'anova'
+results = train_model_per_trial(device_rf_data, trials_info, model_type, model_params_rnf, method="mutual_info")
 ```
 #### **Machine Learning Models**
 We have evaluated the performance of five different machine learning models: Random Forest (RnF), Support Vector Machine (SVM), XGBoost (XGB), Logistic Regression (LR), and K-Nearest Neighbors (KNN). The default model used in the provided code is Random Forest. To test a different model, change the `model_type` and corresponding `model_params` in the `train_model_per_trial` function call:
