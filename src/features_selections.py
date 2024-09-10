@@ -52,4 +52,4 @@ def select_features(X, y, n_features_to_select, method="anova"):
         return X_selected, selected_indices
 
     else:
-        raise ValueError(f"Unknown method: {method}. Available methods: 'relieff', 'mutual_info', 'anova', 'pca'.")
+        raise ValueError(f"Unknown method: {method}. Available methods: 'rfe', 'mutual_info', 'anova', 'pca'.")
