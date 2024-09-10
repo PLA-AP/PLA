@@ -1,6 +1,6 @@
 from sklearn.decomposition import PCA
-from skrebate import ReliefF
-from sklearn.feature_selection import SelectKBest, mutual_info_classif, f_classif
+from sklearn.feature_selection import SelectKBest, mutual_info_classif, f_classif, RFE
+from sklearn.linear_model import LogisticRegression
 import numpy as np
 
 ## Phase 3: Features Selection for devices
