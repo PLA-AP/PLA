@@ -188,7 +188,7 @@ def train_model_per_trial(device_rf_data, trials_info, model_type, model_params,
                             'misclassified_rogue': misclassified_rogue
                         }
                         trial_weighted_accuracy[trial_name].append(weighted_accuracy)
-                        print(f"Device {device_id} in Trial {trial_name}: Model meets criteria with TDR: {auth_TDR}, FVR: {auth_FDR} for Authorized, and TDR: {rogue_TDR} for Malicious.")
+                        print(f"Device {device_id} in Trial {trial_name}: Model meets criteria with TDR: {auth_TDR}, FDR: {auth_FDR} for Authorized, and TDR: {rogue_TDR} for Malicious.")
                         save_model(device_id, trial_name, model, selected_features_indices)
                         break
                     elif score < best_score:
