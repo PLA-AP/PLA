@@ -1,4 +1,4 @@
-tioimport numpy as np
+import numpy as np
 from sklearn.metrics import confusion_matrix
 
 ## Phase 4: Machine Learning Model Training and Evaluation
