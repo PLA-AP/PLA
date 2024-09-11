@@ -16,7 +16,7 @@ This repository includes all necessary code, datasets, and documentation to repr
 ## **Supported Environments and Hardware Requirements**
 The code and models are supported on the following environments and hardware configurations:
 
-- **`Operating Systems`**: Windows 11/Ubuntu 22.04.
+- **`Operating Systems`**: Ubuntu 22.04.
 - **`Processor`**: 12th Gen Intel® Core™ i7-12800H, 14 cores, 2.4 GHz base clock speed.
 - **`Memory`**: 32 GB RAM.
 - **`Python Version`**: 3.x 
