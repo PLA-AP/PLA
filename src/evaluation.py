@@ -1,4 +1,4 @@
-import numpy as np
+tioimport numpy as np
 from sklearn.metrics import confusion_matrix
 
 ## Phase 4: Machine Learning Model Training and Evaluation
@@ -17,15 +17,15 @@ def evaluate_model_criteria(y_true, y_pred, positive_label=1, sample_device_mapp
     - sample_device_mapping (list): Optional. List mapping each sample index to its device ID.
 
     Returns:
-    - Tuple[float, float, list]: True positive rate (tvr), false positive rate (fvr), 
+    - Tuple[float, float, list]: True Detection Rate (TDR), False Detection Rate (FDR), 
       and a list of misclassified sample indices or tuples of (index, device ID) if sample_device_mapping is provided.
     """
     # Compute confusion matrix
     cm = confusion_matrix(y_true, y_pred, labels=[positive_label, 1-positive_label])
     
-    # Calculate True Positive Rate (tvr) and False Positive Rate (fvr)
-    tvr = cm[0, 0] / np.sum(cm[0, :]) if np.sum(cm[0, :]) > 0 else 0
-    fvr = cm[1, 0] / np.sum(cm[1, :]) if np.sum(cm[1, :]) > 0 else 0
+    # Calculate True Detection Rate (TDR) and False Detection Rate (FDR)
+    TDR = cm[0, 0] / np.sum(cm[0, :]) if np.sum(cm[0, :]) > 0 else 0
+    FDR = cm[1, 0] / np.sum(cm[1, :]) if np.sum(cm[1, :]) > 0 else 0
     
     # Identify misclassified samples
     misclassified_indices = np.where(y_true != y_pred)[0]
@@ -36,7 +36,7 @@ def evaluate_model_criteria(y_true, y_pred, positive_label=1, sample_device_mapp
     else:
         misclassified_info = misclassified_indices.tolist()
     
-    return tvr, fvr, misclassified_info
+    return TDR, FDR, misclassified_info
 
 def calculate_closeness_score(auth_tvr, auth_fvr, rogue_tvr, rogue_fvr, tvr_threshold=0.95, fvr_threshold=0.05):
     """
