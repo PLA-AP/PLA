@@ -43,12 +43,12 @@ def calculate_closeness_score(auth_TDR, auth_FDR, rogue_TDR, rogue_FDR, TDR_thre
     Calculates a score representing how close a model's performance is to the desired thresholds.
 
     Args:
-    - auth_tvr (float): True positive rate for authenticated devices.
-    - auth_fvr (float): False positive rate for authenticated devices.
-    - rogue_tvr (float): True positive rate for rogue devices.
-    - rogue_fvr (float): False positive rate for rogue devices.
-    - tvr_threshold (float): Desired true positive rate threshold (default is 0.95).
-    - fvr_threshold (float): Desired false positive rate threshold (default is 0.05).
+    - auth_TDR (float): True positive rate for authenticated devices.
+    - auth_FDR (float): False positive rate for authenticated devices.
+    - rogue_TDR (float): True positive rate for rogue devices.
+    - rogue_FDR (float): False positive rate for rogue devices.
+    - TDR_threshold (float): Desired true positive rate threshold (default is 0.95).
+    - FDR_threshold (float): Desired false positive rate threshold (default is 0.05).
 
     Returns:
     - float: Closeness score representing the model's performance relative to the desired thresholds.
