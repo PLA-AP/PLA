@@ -160,12 +160,12 @@ def train_model_per_trial(device_rf_data, trials_info, model_type, model_params,
                     model.fit(X_train, y_train)
 
                     y_pred_auth = model.predict(X_test)
-                    auth_tvr, auth_fvr, misclassified_auth = evaluate_model_criteria(
+                    auth_TDR, auth_FDR, misclassified_auth = evaluate_model_criteria(
                         y_test, y_pred_auth, positive_label=1,
                         sample_device_mapping=[sample_device_mapping_auth[i] for i in test_index]
                     )
                     y_pred_rogue = model.predict(X_rogue_selected)
-                    rogue_tvr, rogue_fvr, misclassified_rogue = evaluate_model_criteria(
+                    rogue_TDR, rogue_FDR, misclassified_rogue = evaluate_model_criteria(
                         y_rogue, y_pred_rogue, positive_label=0, sample_device_mapping=sample_device_mapping_rogue
                     )
 
