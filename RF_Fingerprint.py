@@ -188,7 +188,7 @@ def train_model_per_trial(device_rf_data, trials_info, model_type, model_params,
                             'misclassified_rogue': misclassified_rogue
                         }
                         trial_weighted_accuracy[trial_name].append(weighted_accuracy)
-                        print(f"Device {device_id} in Trial {trial_name}: Model meets criteria with TDR: {auth_TDR}, FVR: {auth_FDR} for Auth, and TDR: {rogue_TDR}, using {n_features_to_select} features, and with accuracy {weighted_accuracy}, misclassified_auth {misclassified_auth}, misclassified_rogue{misclassified_rogue}.")
+                        print(f"Device {device_id} in Trial {trial_name}: Model meets criteria with TDR: {auth_TDR}, FVR: {auth_FDR} for Authorized, and TDR: {rogue_TDR} for Malicious.")
                         save_model(device_id, trial_name, model, selected_features_indices)
                         break
                     elif score < best_score:
@@ -214,13 +214,13 @@ def train_model_per_trial(device_rf_data, trials_info, model_type, model_params,
             if device_id not in results and best_model_details is not None:
                 results[device_id] = best_model_details
                 trial_weighted_accuracy[trial_name].append(best_weighted_accuracy)
-                print(f"Device {device_id} in Trial {trial_name}: No model met full criteria. Using closest model with TDR: {best_model_details['auth_TDR']}, FDR: {best_model_details['auth_FDR']} for Auth, and TDR: {best_model_details['rogue_TDR']}, using {best_model_details['optimal_n_features']} features, and with accuracy {best_model_details['accuracy']}, misclassified_auth {best_model_details['misclassified_auth']}, misclassified_rogue {best_model_details['misclassified_rogue']}.")
+                print(f"Device {device_id} in Trial {trial_name}: No model met full criteria. Using closest model with TDR: {best_model_details['auth_TDR']}, FDR: {best_model_details['auth_FDR']} for Authorized, and TDR: {best_model_details['rogue_TDR']} for Malicious.")
                 save_model(device_id, trial_name, best_model_details['model'], best_model_details['features_indices'])
 
     # Calculate and print average weighted accuracy for each trial
     for trial_name, weighted_accuracy_list in trial_weighted_accuracy.items():
         average_weighted_accuracy = np.mean(weighted_accuracy_list)
-        print(f"Average weighted accuracy for Trial {trial_name}: {average_weighted_accuracy}")
+        # print(f"Average weighted accuracy for Trial {trial_name}: {average_weighted_accuracy}")
 
     return results
 
