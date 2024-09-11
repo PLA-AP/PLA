@@ -38,7 +38,7 @@ def evaluate_model_criteria(y_true, y_pred, positive_label=1, sample_device_mapp
     
     return TDR, FDR, misclassified_info
 
-def calculate_closeness_score(auth_TDR, auth_FDR, rogue_TDR, rogue_FDR, TDR_threshold=0.95, FVR_threshold=0.05):
+def calculate_closeness_score(auth_TDR, auth_FDR, rogue_TDR, rogue_FDR, TDR_threshold=0.95, FDR_threshold=0.05):
     """
     Calculates a score representing how close a model's performance is to the desired thresholds.
 
