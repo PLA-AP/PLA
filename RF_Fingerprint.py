@@ -169,18 +169,18 @@ def train_model_per_trial(device_rf_data, trials_info, model_type, model_params,
                         y_rogue, y_pred_rogue, positive_label=0, sample_device_mapping=sample_device_mapping_rogue
                     )
 
-                    score = calculate_closeness_score(auth_tvr, auth_fvr, rogue_tvr, rogue_fvr)
-                    weighted_accuracy = (auth_tvr * 0.5 + rogue_tvr * 0.5)
+                    score = calculate_closeness_score(auth_TDR, auth_FDR, rogue_TDR, rogue_FDR)
+                    weighted_accuracy = (auth_TDR * 0.5 + rogue_TDR * 0.5)
 
                     # Check if model meets criteria and save it
-                    if auth_tvr >= 0.95 and auth_fvr <= 0.05 and rogue_tvr >= 0.95 and rogue_fvr <= 0.05:
+                    if auth_TDR >= 0.95 and auth_FDR <= 0.05 and rogue_TDR >= 0.95 and rogue_FDR <= 0.05:
                         results[device_id] = {
                             'trial_name': trial_name,
                             'optimal_n_features': n_features_to_select,
-                            'auth_tvr': auth_tvr,
-                            'auth_fvr': auth_fvr,
-                            'rogue_tvr': rogue_tvr,
-                            'rogue_fvr': rogue_fvr,
+                            'auth_TDR': auth_TDR,
+                            'auth_FDR': auth_FDR,
+                            'rogue_TDR': rogue_TDR,
+                            'rogue_FDR': rogue_FDR,
                             'model': model,
                             'features_indices': selected_features_indices,
                             'accuracy': weighted_accuracy,
@@ -188,7 +188,7 @@ def train_model_per_trial(device_rf_data, trials_info, model_type, model_params,
                             'misclassified_rogue': misclassified_rogue
                         }
                         trial_weighted_accuracy[trial_name].append(weighted_accuracy)
-                        print(f"Device {device_id} in Trial {trial_name}: Model meets criteria with TVR: {auth_tvr}, FVR: {auth_fvr} for Auth, and TVR: {rogue_tvr}, using {n_features_to_select} features, and with accuracy {weighted_accuracy}, misclassified_auth {misclassified_auth}, misclassified_rogue{misclassified_rogue}.")
+                        print(f"Device {device_id} in Trial {trial_name}: Model meets criteria with TDR: {auth_TDR}, FVR: {auth_FDR} for Auth, and TDR: {rogue_TDR}, using {n_features_to_select} features, and with accuracy {weighted_accuracy}, misclassified_auth {misclassified_auth}, misclassified_rogue{misclassified_rogue}.")
                         save_model(device_id, trial_name, model, selected_features_indices)
                         break
                     elif score < best_score:
@@ -196,10 +196,10 @@ def train_model_per_trial(device_rf_data, trials_info, model_type, model_params,
                         best_model_details = {
                             'trial_name': trial_name,
                             'optimal_n_features': n_features_to_select,
-                            'auth_tvr': auth_tvr,
-                            'auth_fvr': auth_fvr,
-                            'rogue_tvr': rogue_tvr,
-                            'rogue_fvr': rogue_fvr,
+                            'auth_TDR': auth_TDR,
+                            'auth_FDR': auth_FDR,
+                            'rogue_TDR': rogue_TDR,
+                            'rogue_FDR': rogue_FDR,
                             'model': model,
                             'features_indices': selected_features_indices,
                             'accuracy': weighted_accuracy,
@@ -214,7 +214,7 @@ def train_model_per_trial(device_rf_data, trials_info, model_type, model_params,
             if device_id not in results and best_model_details is not None:
                 results[device_id] = best_model_details
                 trial_weighted_accuracy[trial_name].append(best_weighted_accuracy)
-                print(f"Device {device_id} in Trial {trial_name}: No model met full criteria. Using closest model with TVR: {best_model_details['auth_tvr']}, FVR: {best_model_details['auth_fvr']} for Auth, and TVR: {best_model_details['rogue_tvr']}, using {best_model_details['optimal_n_features']} features, and with accuracy {best_model_details['accuracy']}, misclassified_auth {best_model_details['misclassified_auth']}, misclassified_rogue {best_model_details['misclassified_rogue']}.")
+                print(f"Device {device_id} in Trial {trial_name}: No model met full criteria. Using closest model with TDR: {best_model_details['auth_TDR']}, FDR: {best_model_details['auth_FDR']} for Auth, and TDR: {best_model_details['rogue_TDR']}, using {best_model_details['optimal_n_features']} features, and with accuracy {best_model_details['accuracy']}, misclassified_auth {best_model_details['misclassified_auth']}, misclassified_rogue {best_model_details['misclassified_rogue']}.")
                 save_model(device_id, trial_name, best_model_details['model'], best_model_details['features_indices'])
 
     # Calculate and print average weighted accuracy for each trial
