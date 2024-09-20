@@ -95,7 +95,7 @@ This section summarizes the main results you should expect when running the prov
 
 ### **Minimal Working Example**
 
-**Model Demonstrated**: This minimal working example focuses on the RF fingerprinting model, **which uses ANOVA for feature selection and Random Forest (RnF) as the classifier**. This combination has been identified as the most performant in our evaluations. When running the `RF_Fingerprint.py` script with its default settings, **Scenario 1** is applied.
+**Model Demonstrated**: This minimal working example focuses on the RF fingerprinting model, **which uses ANOVA for feature selection and Random Forest (RnF) as the classifier**. This combination has been identified as the most performant in our evaluations. When running the `RF_Fingerprint1.py` script with its default settings, **Scenario 1** is applied automatically.
 
 **Expected Output**: When you run the `RF_Fingerprint.py` script with the default settings, you will obtain the following performance metrics:
   - **TDR (True Detection Rate)** for authorized nodes.
@@ -104,34 +104,22 @@ This section summarizes the main results you should expect when running the prov
     
 - **Paper Reference**: This example corresponds to the experiments detailed in Section 5.2.1 of the paper, where the combination of ANOVA for feature selection and Random Forest is evaluated for its effectiveness in device authentication.
   
- **Testing Other Models and Scenarios**:
-If you want to test other combinations of feature selection methods and machine learning models, or run experiments under different scenarios, you can easily do so by modifying the code:
+### **Automatic Testing of Other Models, Feature Selection Methods, and Scenarios**
+
+The script now automatically cycles through all combinations of feature selection methods, machine learning models, and scenarios. You no longer need to manually modify the code to test these variations.
+
 #### **Feature Selection Methods**
-We have tested four different feature selection methods: Mutual Information (MI), Recursive Feature Elimination (RFE), Principal Component Analysis (PCA), and ANOVA. The default method used in the provided code is **ANOVA**. To switch to a different feature selection method, modify the `method` parameter in the `train_model_per_trial` function call:
+We have tested four different feature selection methods: Mutual Information (MI), Recursive Feature Elimination (RFE), Principal Component Analysis (PCA), and ANOVA. The script will automatically run through all these methods.
 
-```python
-# Change 'method' to one of the following: 'mutual_info', 'rfe', 'pca', or 'anova'
-results = train_model_per_trial(device_rf_data, trials_info, model_type, model_params_rnf, method="mutual_info")
-```
 #### **Machine Learning Models**
-We have evaluated the performance of five different machine learning models: Random Forest (RnF), Support Vector Machine (SVM), XGBoost (XGB), Logistic Regression (LR), and K-Nearest Neighbors (KNN). The default model used in the provided code is Random Forest. To test a different model, change the `model_type` and corresponding `model_params` in the `train_model_per_trial` function call:
+The script also automatically tests the performance of five different machine learning models: Random Forest (RnF), Support Vector Machine (SVM), XGBoost (XGB), Logistic Regression (LR), and K-Nearest Neighbors (KNN).
 
-##### Example: Switch to SVM
-```python
-model_type = 'svc'
-results = train_model_per_trial(device_rf_data, trials_info, model_type, model_params_svc, method="anova")
-```
 #### **Scenarios**  
-The code is set up to test one specific scenario (Trial 1) by default. Two other scenarios (Trial 2 and Trial 3) are commented out. To test these scenarios, simply uncomment the relevant section of the `trials_info` dictionary:
-```python
-# Uncomment to test Trial 2
-# trials_info = {
-#     'trial_2': {
-#         'authorized': ['device10', 'device6', 'device12', 'device3', 'device11', 'device1'],
-#         'rogue': ['device2', 'device5', 'device8', 'device7', 'device4', 'device9']
-#     }}
-```
-These changes will allow you to test the performance of different models, feature selection methods, and scenarios as discussed in the paper.
+The script will automatically evaluate all defined scenarios (Trial 1, Trial 2, and Trial 3). The trials are predefined in the code, and the script loops through them sequentially, testing each model and feature selection combination.
+
+These updates make it easier to explore the performance of different models, feature selection methods, and scenarios, as detailed in the paper, without requiring manual changes in the code.
+
+
 ### **Key Results from the RF Fingerprinting Model**
 The following figure illustrates the True Detection Rate (TDR) and False Detection Rate (FDR) for different combinations of feature selection (FS) methods and machine learning (ML) models across three scenarios.
 ![Authentication Rate for different combinations of FS and ML models](Main%20Results.png)
