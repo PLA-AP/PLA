@@ -97,14 +97,21 @@ This section summarizes the main results you should expect when running the prov
 
 **Model Demonstrated**: This minimal working example focuses on the RF fingerprinting model, **which uses ANOVA for feature selection and Random Forest (RnF) as the classifier**. This combination has been identified as the most performant in our evaluations. When running the `RF_Fingerprint1.py` script with its default settings, **Scenario 1** is applied automatically.
 
-**Expected Output**: When you run the `RF_Fingerprint.py` script with the default settings, you will obtain the following performance metrics:
+**Expected Output**: When you run the `RF_Fingerprint1.py` script with the default settings, you will obtain the following performance metrics:
   - **TDR (True Detection Rate)** for authorized nodes.
   - **FDR (False Detection Rate)** for authorized nodes.
   - **TDR (True Detection Rate)** for malicious nodes.
     
 - **Paper Reference**: This example corresponds to the experiments detailed in Section 5.2.1 of the paper, where the combination of ANOVA for feature selection and Random Forest is evaluated for its effectiveness in device authentication.
   
+  
 ### **Automatic Testing of Other Models, Feature Selection Methods, and Scenarios**
+
+To automatically test different combinations of machine learning models, feature selection methods, and scenarios, simply run the following script:
+
+```bash
+python RF_Fingerprint.py
+```
 
 The script now automatically cycles through all combinations of feature selection methods, machine learning models, and scenarios. You no longer need to manually modify the code to test these variations.
 
@@ -116,9 +123,6 @@ The script also automatically tests the performance of five different machine le
 
 #### **Scenarios**  
 The script will automatically evaluate all defined scenarios (Trial 1, Trial 2, and Trial 3). The trials are predefined in the code, and the script loops through them sequentially, testing each model and feature selection combination.
-
-These updates make it easier to explore the performance of different models, feature selection methods, and scenarios, as detailed in the paper, without requiring manual changes in the code.
-
 
 ### **Key Results from the RF Fingerprinting Model**
 The following figure illustrates the True Detection Rate (TDR) and False Detection Rate (FDR) for different combinations of feature selection (FS) methods and machine learning (ML) models across three scenarios.
