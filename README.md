@@ -119,7 +119,7 @@ If you would like to see the figures from the paper, simply run the following sc
 ```bash
 python results.py
 ```
-
+This will generate the key figures based on the saved models and their corresponding performance metrics.
 
 The following figure illustrates the True Detection Rate (TDR) and False Detection Rate (FDR) for different combinations of feature selection (FS) methods and machine learning (ML) models across three scenarios.
 ![Authentication Rate for different combinations of FS and ML models](Main%20Results.png)
