@@ -124,6 +124,16 @@ The script also automatically tests the performance of five different machine le
 The script will automatically evaluate all defined scenarios (Trial 1, Trial 2, and Trial 3). The trials are predefined in the code, and the script loops through them sequentially, testing each model and feature selection combination.
 
 ### **Key Results from the RF Fingerprinting Model**
+
+For each combination of machine learning models and feature selection methods, we have saved the best-performing models in `.json` files. You can find all the models in the `results` folder. This includes results for all combinations of machine learning models, feature selection methods, and scenarios.
+
+If you would like to see the figures from the paper, simply run the following script to generate them:
+
+```bash
+python results.py
+```
+
+
 The following figure illustrates the True Detection Rate (TDR) and False Detection Rate (FDR) for different combinations of feature selection (FS) methods and machine learning (ML) models across three scenarios.
 ![Authentication Rate for different combinations of FS and ML models](Main%20Results.png)
 
