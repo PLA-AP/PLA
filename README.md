@@ -89,41 +89,28 @@ This script will load the processed data, train the model, and validate its perf
 
 Evaluation of the model's performance can be done using the functions provided in the `evaluation.py` module. The script `RF_Fingerprint.py` includes an evaluation phase, but you can run additional evaluations as needed.
 
+
 ## **Main Results**
 
-This section summarizes the main results you should expect when running the provided code, as discussed in our paper.
+This section summarizes the main results you should expect when running the provided code, as discussed in our paper. The script now automates the testing of different machine learning models, feature selection methods, and scenarios.
 
-### **Minimal Working Example**
+### **Running the Experiments**
 
-**Model Demonstrated**: This minimal working example focuses on the RF fingerprinting model, **which uses ANOVA for feature selection and Random Forest (RnF) as the classifier**. This combination has been identified as the most performant in our evaluations. When running the `RF_Fingerprint1.py` script with its default settings, **Scenario 1** is applied automatically.
-
-**Expected Output**: When you run the `RF_Fingerprint1.py` script with the default settings, you will obtain the following performance metrics:
-  - **TDR (True Detection Rate)** for authorized nodes.
-  - **FDR (False Detection Rate)** for authorized nodes.
-  - **TDR (True Detection Rate)** for malicious nodes.
-    
-- **Paper Reference**: This example corresponds to the experiments detailed in Section 5.2.1 of the paper, where the combination of ANOVA for feature selection and Random Forest is evaluated for its effectiveness in device authentication.
-  
-  
-### **Automatic Testing of Other Models, Feature Selection Methods, and Scenarios**
-
-To automatically test different combinations of machine learning models, feature selection methods, and scenarios, simply run the following script:
+To run the experiments and automatically test different combinations of machine learning models, feature selection methods, and scenarios, simply execute the following script:
 
 ```bash
 python RF_Fingerprint.py
 ```
+### **Expected Output**
 
-The script now automatically cycles through all combinations of feature selection methods, machine learning models, and scenarios.
-#### **Feature Selection Methods**
-We have tested four different feature selection methods: Mutual Information (MI), Recursive Feature Elimination (RFE), Principal Component Analysis (PCA), and ANOVA. The script will automatically run through all these methods.
+When you run the `RF_Fingerprint.py` script with the default settings, you will obtain the following performance metrics:
 
-#### **Machine Learning Models**
-The script also automatically tests the performance of five different machine learning models: Random Forest (RnF), Support Vector Machine (SVM), XGBoost (XGB), Logistic Regression (LR), and K-Nearest Neighbors (KNN).
+- **TDR (True Detection Rate)** for authorized nodes.
+- **FDR (False Detection Rate)** for authorized nodes.
+- **TDR (True Detection Rate)** for malicious nodes.
 
-#### **Scenarios**  
-The script will automatically evaluate all defined scenarios (Trial 1, Trial 2, and Trial 3). The trials are predefined in the code, and the script loops through them sequentially, testing each model and feature selection combination.
 
-### **Key Results from the RF Fingerprinting Model**
+### **Key Results and Figures**
 
 For each combination of machine learning models and feature selection methods, we have saved the best-performing models in `.json` files. You can find all the models in the `results` folder. This includes results for all combinations of machine learning models, feature selection methods, and scenarios.
 
