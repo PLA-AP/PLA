@@ -113,8 +113,7 @@ To automatically test different combinations of machine learning models, feature
 python RF_Fingerprint.py
 ```
 
-The script now automatically cycles through all combinations of feature selection methods, machine learning models, and scenarios. You no longer need to manually modify the code to test these variations.
-
+The script now automatically cycles through all combinations of feature selection methods, machine learning models, and scenarios.
 #### **Feature Selection Methods**
 We have tested four different feature selection methods: Mutual Information (MI), Recursive Feature Elimination (RFE), Principal Component Analysis (PCA), and ANOVA. The script will automatically run through all these methods.
 
