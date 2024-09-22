@@ -1,0 +1,28 @@
+{
+    "trial_name": "trial_1",
+    "model_type": "knn",
+    "method": "rfe",
+    "overall_adr": 0.8958333333333334,
+    "devices": {
+        "device3": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.86
+        },
+        "device2": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.79
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.97
+        },
+        "device9": {
+            "auth_tvr": 0.6666666666666666,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.88
+        }
+    }
+}

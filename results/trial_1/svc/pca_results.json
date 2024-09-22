@@ -1,0 +1,28 @@
+{
+    "trial_name": "trial_1",
+    "model_type": "svc",
+    "method": "pca",
+    "overall_adr": 0.5416666666666666,
+    "devices": {
+        "device3": {
+            "auth_tvr": 0.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 1.0
+        },
+        "device2": {
+            "auth_tvr": 0.3333333333333333,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 1.0
+        },
+        "device12": {
+            "auth_tvr": 0.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 1.0
+        },
+        "device9": {
+            "auth_tvr": 0.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 1.0
+        }
+    }
+}

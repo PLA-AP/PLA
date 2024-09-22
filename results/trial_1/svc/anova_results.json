@@ -1,0 +1,28 @@
+{
+    "trial_name": "trial_1",
+    "model_type": "svc",
+    "method": "anova",
+    "overall_adr": 0.9725,
+    "devices": {
+        "device3": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.93
+        },
+        "device2": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.94
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.95
+        },
+        "device9": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.96
+        }
+    }
+}

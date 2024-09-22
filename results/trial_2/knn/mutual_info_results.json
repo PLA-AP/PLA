@@ -1,0 +1,38 @@
+{
+    "trial_name": "trial_2",
+    "model_type": "knn",
+    "method": "mutual_info",
+    "overall_adr": 0.9252008032128515,
+    "devices": {
+        "device10": {
+            "auth_tvr": 0.5,
+            "auth_fvr": 0.09090909090909091,
+            "rogue_tvr": 0.9518072289156626
+        },
+        "device6": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9518072289156626
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9518072289156626
+        },
+        "device3": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.3,
+            "rogue_tvr": 0.8795180722891566
+        },
+        "device11": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.963855421686747
+        },
+        "device1": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.1,
+            "rogue_tvr": 0.9036144578313253
+        }
+    }
+}

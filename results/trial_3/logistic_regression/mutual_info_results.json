@@ -1,0 +1,48 @@
+{
+    "trial_name": "trial_3",
+    "model_type": "logistic_regression",
+    "method": "mutual_info",
+    "overall_adr": 0.9024621212121212,
+    "devices": {
+        "device1": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0625,
+            "rogue_tvr": 0.9272727272727272
+        },
+        "device10": {
+            "auth_tvr": 0.5,
+            "auth_fvr": 0.0625,
+            "rogue_tvr": 0.9272727272727272
+        },
+        "device9": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0625,
+            "rogue_tvr": 0.8545454545454545
+        },
+        "device8": {
+            "auth_tvr": 0.6666666666666666,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.8727272727272727
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 1.0
+        },
+        "device11": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9636363636363636
+        },
+        "device6": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9636363636363636
+        },
+        "device7": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.125,
+            "rogue_tvr": 0.7636363636363637
+        }
+    }
+}

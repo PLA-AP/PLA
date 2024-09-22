@@ -1,0 +1,38 @@
+{
+    "trial_name": "trial_2",
+    "model_type": "logistic_regression",
+    "method": "pca",
+    "overall_adr": 0.9809236947791166,
+    "devices": {
+        "device10": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.09090909090909091,
+            "rogue_tvr": 1.0
+        },
+        "device6": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.1111111111111111,
+            "rogue_tvr": 0.9759036144578314
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.25,
+            "rogue_tvr": 0.8313253012048193
+        },
+        "device3": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.1,
+            "rogue_tvr": 1.0
+        },
+        "device11": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.45454545454545453,
+            "rogue_tvr": 0.963855421686747
+        },
+        "device1": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.2,
+            "rogue_tvr": 1.0
+        }
+    }
+}

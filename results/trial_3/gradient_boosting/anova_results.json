@@ -1,0 +1,48 @@
+{
+    "trial_name": "trial_3",
+    "model_type": "gradient_boosting",
+    "method": "anova",
+    "overall_adr": 0.9522727272727273,
+    "devices": {
+        "device1": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.13333333333333333,
+            "rogue_tvr": 0.8545454545454545
+        },
+        "device10": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0625,
+            "rogue_tvr": 0.9272727272727272
+        },
+        "device9": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0625,
+            "rogue_tvr": 0.8727272727272727
+        },
+        "device8": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.06666666666666667,
+            "rogue_tvr": 0.8545454545454545
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9636363636363636
+        },
+        "device11": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.11764705882352941,
+            "rogue_tvr": 0.9454545454545454
+        },
+        "device6": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.13333333333333333,
+            "rogue_tvr": 0.9090909090909091
+        },
+        "device7": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0625,
+            "rogue_tvr": 0.9090909090909091
+        }
+    }
+}

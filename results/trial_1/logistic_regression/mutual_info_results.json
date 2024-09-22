@@ -1,0 +1,28 @@
+{
+    "trial_name": "trial_1",
+    "model_type": "logistic_regression",
+    "method": "mutual_info",
+    "overall_adr": 0.9537500000000001,
+    "devices": {
+        "device3": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.91
+        },
+        "device2": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.2857142857142857,
+            "rogue_tvr": 0.83
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.95
+        },
+        "device9": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.94
+        }
+    }
+}

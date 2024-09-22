@@ -1,0 +1,28 @@
+{
+    "trial_name": "trial_1",
+    "model_type": "gradient_boosting",
+    "method": "pca",
+    "overall_adr": 0.9924999999999999,
+    "devices": {
+        "device3": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 1.0
+        },
+        "device2": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.2857142857142857,
+            "rogue_tvr": 1.0
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 1.0
+        },
+        "device9": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.14285714285714285,
+            "rogue_tvr": 0.94
+        }
+    }
+}

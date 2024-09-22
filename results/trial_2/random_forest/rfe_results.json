@@ -1,0 +1,38 @@
+{
+    "trial_name": "trial_2",
+    "model_type": "random_forest",
+    "method": "rfe",
+    "overall_adr": 0.9402610441767068,
+    "devices": {
+        "device10": {
+            "auth_tvr": 0.5,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.963855421686747
+        },
+        "device6": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9518072289156626
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9759036144578314
+        },
+        "device3": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9518072289156626
+        },
+        "device11": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9518072289156626
+        },
+        "device1": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9879518072289156
+        }
+    }
+}

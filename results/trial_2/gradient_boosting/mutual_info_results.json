@@ -1,0 +1,38 @@
+{
+    "trial_name": "trial_2",
+    "model_type": "gradient_boosting",
+    "method": "mutual_info",
+    "overall_adr": 0.965863453815261,
+    "devices": {
+        "device10": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.09090909090909091,
+            "rogue_tvr": 0.8674698795180723
+        },
+        "device6": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.891566265060241
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9879518072289156
+        },
+        "device3": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9518072289156626
+        },
+        "device11": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.9759036144578314
+        },
+        "device1": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.1,
+            "rogue_tvr": 0.9156626506024096
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "trial_name": "trial_1",
+    "model_type": "gradient_boosting",
+    "method": "mutual_info",
+    "overall_adr": 0.9324999999999999,
+    "devices": {
+        "device3": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.86
+        },
+        "device2": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.7
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.98
+        },
+        "device9": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.92
+        }
+    }
+}

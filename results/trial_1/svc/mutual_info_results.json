@@ -1,0 +1,28 @@
+{
+    "trial_name": "trial_1",
+    "model_type": "svc",
+    "method": "mutual_info",
+    "overall_adr": 0.8770833333333333,
+    "devices": {
+        "device3": {
+            "auth_tvr": 0.5,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.96
+        },
+        "device2": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.97
+        },
+        "device12": {
+            "auth_tvr": 1.0,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.95
+        },
+        "device9": {
+            "auth_tvr": 0.6666666666666666,
+            "auth_fvr": 0.0,
+            "rogue_tvr": 0.97
+        }
+    }
+}
