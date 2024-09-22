@@ -117,7 +117,8 @@ For each combination of machine learning models and feature selection methods, w
 If you would like to see the figures from the paper, simply run the following script to generate them:
 
 ```bash
-python results.py
+python Plotting_Results.py
+
 ```
 This will generate the key figures based on the saved models and their corresponding performance metrics.
 
