@@ -112,17 +112,16 @@ When you run the `RF_Fingerprint.py` script with the default settings, you will 
 
 ### **Key Results and Figures**
 
-For each combination of machine learning models and feature selection methods, we have stored the best-performing models in `.json` files. These can be downloaded from [Download Dataset from Google Drive](https://drive.google.com/file/d/1Hj6V6LVJnZMDRaQczt9gFOyiJhImjWnx/view?pli=1). You can find all the results in the `results` folder. This includes results for all combinations of machine learning models, feature selection methods, and scenarios.
+For each combination of machine learning models and feature selection methods, we have stored the best-performing models in `.json` files. These can be downloaded from [Download Dataset from Google Drive](https://drive.google.com/file/d/1Hj6V6LVJnZMDRaQczt9gFOyiJhImjWnx/view?pli=1). All results, including those for every combination of machine learning models, feature selection methods, and scenarios, are available in the `results` folder. 
 
-If you would like to see the figures from the paper, simply run the following script to generate them:
-
+To generate the key figures from the paper, run the following script:
 ```bash
 python Plotting_Results.py
 
 ```
-This will generate the key figures based on the saved models and their corresponding performance metrics.
+This script will generate the main figures using the saved models and their associated performance metrics.
 
-The following figure illustrates the True Detection Rate (TDR) and False Detection Rate (FDR) for different combinations of feature selection (FS) methods and machine learning (ML) models across three scenarios.
+The following figure illustrates the TDR and FDR for different combinations of FS methods and ML models across three scenarios.
 ![Authentication Rate for different combinations of FS and ML models](Main%20Results.png)
 
 Each subfigure shows the performance across the three scenarios (Scenario 1, Scenario 2, Scenario 3) and for different devices. The results demonstrate the variations in detection rates depending on the combination of FS methods and ML models used.
