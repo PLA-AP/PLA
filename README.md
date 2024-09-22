@@ -41,11 +41,11 @@ This repository is organized into the following folders:
   - **`processed_fingerprints_data.h5`**: The HDF5 file containing processed RF fingerprint data for each device.
 
 - **`results`**: Contains the results for each trial, saved in .json files.
-- 
+
 - **`results_noise`**: Contains the results for each trial at different SNR levels, saved in .json files.
 
 - **`RF_Fingerprint.py`**: The main script for training and evaluation of RF fingerprinting models.
-
+- **`Plotting_Results.py`**: The script used to generate figures from the results.
 - **`rf_fingerprint_env.yml`**: YAML file for setting up the same environment using Conda.
 
 ## **Dataset**
