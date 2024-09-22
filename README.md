@@ -112,7 +112,7 @@ When you run the `RF_Fingerprint.py` script with the default settings, you will 
 
 ### **Key Results and Figures**
 
-For each combination of machine learning models and feature selection methods, we have saved the best-performing models in `.json` files in drive [Download Dataset from Google Drive](https://drive.google.com/file/d/1Hj6V6LVJnZMDRaQczt9gFOyiJhImjWnx/view?pli=1). You can find all the results in the `results` folder. This includes results for all combinations of machine learning models, feature selection methods, and scenarios.
+For each combination of machine learning models and feature selection methods, we have stored the best-performing models in `.json` files. These can be downloaded from [Download Dataset from Google Drive](https://drive.google.com/file/d/1Hj6V6LVJnZMDRaQczt9gFOyiJhImjWnx/view?pli=1). You can find all the results in the `results` folder. This includes results for all combinations of machine learning models, feature selection methods, and scenarios.
 
 If you would like to see the figures from the paper, simply run the following script to generate them:
 
