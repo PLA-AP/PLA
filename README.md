@@ -147,7 +147,7 @@ When you run the `RF_Fingerprint.py` script with the default settings, you will 
 - **TDR (True Detection Rate)** for malicious nodes.
 
 ### **Estimated Time to Run Experiments**
-Below are approximate times for running the experiments based on our hardware configuration (e.g., Intel i7-9700K, 32GB RAM, NVIDIA RTX 3080):
+Below are approximate times for running the experiments based on our hardware configuration (e.g., Intel i7-9700K, 32GB RAM):
 - **Recursive Feature Elimination (RFE)**: ~3 hours
 - **XGBoost (with RFE)**: ~2 hours
 - **XGBoost (with RFE)**: ~30 minutes
