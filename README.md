@@ -129,8 +129,6 @@ When you run the `RF_Fingerprint.py` script with the default settings, you will 
 ### **Estimated Time to Run Experiments**
 Below are approximate times for running the experiments based on our hardware configuration (e.g., Intel i7-9700K, 32GB RAM):
 
-### Execution Times for Trials 1, 2, and 3
-
 | Model          | Feature Selection | Trial 1   | Trial 2   | Trial 3   |
 |----------------|-------------------|-----------|-----------|-----------|
 | **Random Forest** | ANOVA           | 00:17     | 00:24     | 01:11     |
