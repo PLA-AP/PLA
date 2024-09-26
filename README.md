@@ -126,7 +126,13 @@ To run `trial_1` and `trial_2` using the `random_forest` and `svc` models, with 
    ```bash
 python RF_Fingerprint.py --trial trial_1 trial_2 --model random_forest svc --feature pca anova
 ```
-##### 2. **Run All Models for All Trials with a Specific Feature Selection Method**
+##### 3. **Run Specific Model for All Trials with All Feature Selection Methods**
+To run a specific model (e.g., `random_forest`) for all trials with all feature selection methods, use the following command:
+
+```bash
+python RF_Fingerprint.py --model random_forest
+```
+##### 4. **Run All Models for All Trials with a Specific Feature Selection Method**
 To run all trials and models but only use pca for feature selection: 
 ```bash
 python RF_Fingerprint.py --feature pca
