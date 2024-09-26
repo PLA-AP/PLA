@@ -78,7 +78,7 @@ conda activate <your-environment-name>
 ### Data Preparation
 
 The data required for training is provided in the `dataset/processed_fingerprints_data.h5` file. This file contains the processed RF fingerprint data for each device, which is used to train and validate the models.
-
+<!--
 ### Training the Model
 
 To train the RF fingerprinting model, run the `RF_Fingerprint.py` script:
@@ -92,7 +92,7 @@ This script will load the processed data, train the model, and validate its perf
 ### Evaluating the Model
 
 Evaluation of the model's performance can be done using the functions provided in the `evaluation.py` module. The script `RF_Fingerprint.py` includes an evaluation phase, but you can run additional evaluations as needed.
-
+-->
 
 ## **Main Results**
 
