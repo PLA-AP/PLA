@@ -111,7 +111,7 @@ def calculate_adr_for_trial(results):
     overall_adr = np.mean(list(trial_adr.values()))
     return trial_adr, overall_adr
 
-def save_results_to_json(trial_name, model_type, method, results, overall_adr, output_dir='results_1'):
+def save_results_to_json(trial_name, model_type, method, results, overall_adr, output_dir='results'):
     # Create a folder for each trial and each model type within the main output directory
     trial_dir = os.path.join(output_dir, trial_name, model_type) 
     os.makedirs(trial_dir, exist_ok=True)  # Create trial- and model-specific directory if it doesn't exist
@@ -286,7 +286,7 @@ def save_model(device_id, trial_name, model, selected_features_indices, model_ty
     - method (str): Feature selection method used.
     """
     # Create the directory for the trial and combination if it doesn't exist
-    trial_dir = os.path.join('model_saved_1', trial_name, model_type, method)
+    trial_dir = os.path.join('model_saved', trial_name, model_type, method)
     os.makedirs(trial_dir, exist_ok=True)
 
     model_details = {
