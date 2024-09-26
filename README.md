@@ -128,22 +128,33 @@ When you run the `RF_Fingerprint.py` script with the default settings, you will 
 
 ### **Estimated Time to Run Experiments**
 Below are approximate times for running the experiments based on our hardware configuration (e.g., Intel i7-9700K, 32GB RAM):
-### Execution Times for Trial 1 and Trial 2
 
-| Model          | ANOVA   | MI     | PCA    | RFE     |
-|----------------|---------|--------|--------|---------|
-| **Trial 1**    |         |        |        |         |
-| Random Forest  | 1:45    | 3:09   | 1:34   | 1:26:42 |
-| SUM            | 3:15    | 18:49  | 4:35   | 3:10:38 |
-| KNN            | 5:65    | 24:42  | 5:35   | 3:38:47 |
-| XGB            | 2:14    | 34:13  | 1:57   | 3:56:04 |
-| LR             | 3:75    | 22:18  | 1:75   | 3:36:04 |
-| **Trial 2**    |         |        |        |         |
-| Random Forest  | 2:45    | 1:16   | 3:40   | 1:54:03 |
-| SUM            | 54      | 26:44  | 1:09   | 4:39:52 |
-| KNN            | NS      | 24:22  | 1:17   | 1:55:10 |
-| XGB            | 3:14    | 80:49  | 3:02   | 4:42:09 |
-| LR             | 34      | 26:30  | 1:00   | 3:34:49 |
+### Execution Times for Trials 1, 2, and 3
+
+| Model          | Feature Selection | Trial 1   | Trial 2   | Trial 3   |
+|----------------|-------------------|-----------|-----------|-----------|
+| **Random Forest** | ANOVA           | 00:17     | 00:24     | 01:11     |
+|                | MI                | 03:09     | 01:16     | 17:30     |
+|                | PCA               | 01:34     | 03:40     | 05:20     |
+|                | RFE               | 1:26:42   | 1:54:03   | 4:50:35   |
+| **SVC**        | ANOVA             | 00:31     | 00:54     | 02:05     |
+|                | MI                | 18:49     | 26:44     | 58:11     |
+|                | PCA               | 00:43     | 01:07     | 02:18     |
+|                | RFE               | 3:10:38   | 4:39:52   | N/A       |
+| **KNN**        | ANOVA             | 00:56     | 00:15     | N/A       |
+|                | MI                | 24:42     | 24:22     | N/A       |
+|                | PCA               | 00:57     | 01:17     | N/A       |
+|                | RFE               | 3:38:47   | 1:55:18   | N/A       |
+| **XGB**        | ANOVA             | 02:14     | 03:04     | N/A       |
+|                | MI                | 34:13     | 50:49     | N/A       |
+|                | PCA               | 01:57     | 03:02     | N/A       |
+|                | RFE               | 3:56:04   | 4:42:09   | N/A       |
+| **Logistic Regression** | ANOVA     | 00:37     | 00:34     | N/A       |
+|                | MI                | 22:18     | 25:50     | N/A       |
+|                | PCA               | 00:17     | 01:00     | N/A       |
+|                | RFE               | 3:39:36   | 3:34:49   | N/A       |
+
+
 
 
 > **Note**: The time may vary depending on the hardware and specific system setup.
