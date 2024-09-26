@@ -1,6 +1,7 @@
 import os
 import json
 import numpy as np
+import argparse
 from tqdm import tqdm
 from sklearn.model_selection import StratifiedKFold
 from sklearn.ensemble import RandomForestClassifier
@@ -8,7 +9,6 @@ from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from xgboost import XGBClassifier
-from sklearn.ensemble import GradientBoostingClassifier
 from src.dataloader import load_data_and_unique_labels, load_data_from_hdf5
 from src.evaluation import evaluate_model_criteria, calculate_closeness_score
 from src.features_selections import select_features
@@ -17,6 +17,16 @@ import joblib
 # Define data paths and processed data file
 DATA_DIRECTORY = r'dataset'  # Directory containing the raw data files
 PROCESSED_DATA_PATH = r'dataset/processed_fingerprints_data.h5'  # Path to save the processed fingerprints data
+
+# Argument parser
+def parse_args():
+    parser = argparse.ArgumentParser(description='Run RF fingerprinting with trials, models, and feature selection options.')
+    parser.add_argument('--trial', type=str, nargs='+', default=None, help='Specify one or more trials (e.g., trial_1 trial_2). Leave empty to run all trials.')
+    parser.add_argument('--model', type=str, nargs='+', default=None, help='Specify one or more models (e.g., random_forest svc). Leave empty to run all models.')
+    parser.add_argument('--feature', type=str, nargs='+', default=None, help='Specify one or more feature selection methods (e.g., pca anova). Leave empty to run all methods.')
+    parser.add_argument('--run_all', action='store_true', help='Run all combinations of trials, models, and feature selection methods.')
+
+    return parser.parse_args()
 
 # Check if processed data exists
 if os.path.exists(PROCESSED_DATA_PATH):
@@ -61,6 +71,20 @@ trials_info = {
     }
 }
 
+# Get model based on user input or run all
+def get_selected_models(args):
+    return args.model if args.model else model_configs.keys()
+
+# Get feature selection methods based on user input or run all
+def get_selected_features(args):
+    return args.feature if args.feature else feature_selection_methods
+
+# Get trials based on user input or run all
+def get_selected_trials(args):
+    return args.trial if args.trial else trials_info.keys()
+
+# Function to return a machine learning model based on the specified model type.
+# The function uses **kwargs to pass additional hyperparameters to the model.
 def get_model(model_type, **kwargs):
     if model_type == 'svc':
         return SVC(**kwargs)
@@ -72,11 +96,11 @@ def get_model(model_type, **kwargs):
         return XGBClassifier(**kwargs)
     elif model_type == 'random_forest':
         return RandomForestClassifier(**kwargs)
-    elif model_type == 'gradient_boosting':
-        return GradientBoostingClassifier(**kwargs)
     else:
         raise ValueError(f"Unknown model type: {model_type}")
-
+    
+# Function to calculate the Average Detection Rate (ADR) for a given trial.
+# ADR is calculated as the average of the True Detection Rates (TDR) for authorized and rogue (malicious) devices.
 def calculate_adr_for_trial(results):
     trial_adr = {}
     for device_id, device_results in results.items():
@@ -87,7 +111,7 @@ def calculate_adr_for_trial(results):
     overall_adr = np.mean(list(trial_adr.values()))
     return trial_adr, overall_adr
 
-def save_results_to_json(trial_name, model_type, method, results, overall_adr, output_dir='results'):
+def save_results_to_json(trial_name, model_type, method, results, overall_adr, output_dir='results_1'):
     # Create a folder for each trial and each model type within the main output directory
     trial_dir = os.path.join(output_dir, trial_name, model_type) 
     os.makedirs(trial_dir, exist_ok=True)  # Create trial- and model-specific directory if it doesn't exist
@@ -117,6 +141,7 @@ def save_results_to_json(trial_name, model_type, method, results, overall_adr, o
 
     print(f"Results saved to {filename}")
 
+# Function to train models for each trial, model, and feature selection method.
 def train_model_per_trial(device_rf_data, trials_info, model_configs, feature_selection_methods):
     all_results = {}
     all_adr_results = {}
@@ -261,7 +286,7 @@ def save_model(device_id, trial_name, model, selected_features_indices, model_ty
     - method (str): Feature selection method used.
     """
     # Create the directory for the trial and combination if it doesn't exist
-    trial_dir = os.path.join('model_saved', trial_name, model_type, method)
+    trial_dir = os.path.join('model_saved_1', trial_name, model_type, method)
     os.makedirs(trial_dir, exist_ok=True)
 
     model_details = {
@@ -273,49 +298,82 @@ def save_model(device_id, trial_name, model, selected_features_indices, model_ty
     print(f"Model and features indices saved: {filename}")
 
 
-# Define all the model configurations and feature selection methods
+# Define the configurations for all models that will be used for training and evaluation.
+# Each model type has its own set of hyperparameters specific to its algorithm.
 model_configs = {
+    # Configuration for the Random Forest model
     'random_forest': {
-        'n_estimators': 10,
-        'max_depth': 8,
-        'random_state': 42,
-        'n_jobs': 1
+        'n_estimators': 10,         # Number of trees in the forest
+        'max_depth': 8,             # Maximum depth of each tree (limits the tree growth)
+        'random_state': 42,         # Random seed for reproducibility
+        'n_jobs': 1                 # Number of CPU cores to use (1 means use a single core)
     },
+    # Configuration for the Support Vector Classifier (SVC)
     'svc': {
-        'kernel': 'poly',
-        'C': 1.0,
-        'probability': True
+        'kernel': 'poly',           # Kernel type to be used in the algorithm (polynomial kernel)
+        'C': 1.0,                   # Regularization parameter (controls trade-off between maximizing the margin and minimizing classification errors)
+        'probability': True          # Whether to enable probability estimates (useful for cross-validation)
     },
+    # Configuration for the K-Nearest Neighbors (KNN) model
     'knn': {
-        'n_neighbors': 5
+        'n_neighbors': 5            # Number of neighbors to use for classification (the default value is 5)
     },
+    # Configuration for the XGBoost model (Extreme Gradient Boosting)
     'xgb': {
-        'objective': 'binary:logistic',
-        'max_depth': 8,
-        'n_estimators': 10,
-        'learning_rate': 0.1,
-        'subsample': 0.7,
-        'colsample_bytree': 0.7,
-        'random_state': 42
+        'objective': 'binary:logistic',  # Objective function for binary classification
+        'max_depth': 8,                  # Maximum depth of a tree (similar to Random Forest)
+        'n_estimators': 10,              # Number of boosting rounds (trees)
+        'learning_rate': 0.1,            # Step size shrinkage (learning rate) to prevent overfitting
+        'subsample': 0.7,                # Fraction of samples to be randomly chosen for each tree
+        'colsample_bytree': 0.7,         # Fraction of features to be used in each boosting round (reduces overfitting)
+        'random_state': 42               # Random seed for reproducibility
     },
-    'gradient_boosting': {
-        'n_estimators': 10,
-        'learning_rate': 0.1,
-        'max_depth': 8,
-        'random_state': 42
-    },
+    # Configuration for the Logistic Regression model
     'logistic_regression': {
-        'C': 1.0,
-        'random_state': 42,
-        'solver': 'liblinear',
-        'max_iter': 500
+        'C': 1.0,                        # Inverse of regularization strength (smaller values specify stronger regularization)
+        'random_state': 42,              # Random seed for reproducibility
+        'solver': 'liblinear',           # Algorithm to use in the optimization problem
+        'max_iter': 500                  # Maximum number of iterations for the solver to converge
     }
 }
 
-feature_selection_methods = ['pca', 'mutual_info','anova','rfe']
+# Define the list of feature selection methods to be used.
+# These methods will be applied to select the most relevant features before training the models.
+feature_selection_methods = [
+    'pca',           # Principal Component Analysis: reduces dimensionality by selecting key components
+    'mutual_info',   # Mutual Information: selects features based on the amount of shared information with the target variable
+    'anova',         # ANOVA F-test: selects features based on statistical significance in classification tasks
+    'rfe'            # Recursive Feature Elimination: recursively removes features to improve model performance
+]
 
-# Example call to train_model_per_trial with all combinations
-device_rf_data = {device: X[y == idx] for device, idx in device_id_mapping.items()}
-all_results, all_adr_results = train_model_per_trial(device_rf_data, trials_info, model_configs, feature_selection_methods)
+# Main function that orchestrates the workflow
+def main():
+    args = parse_args()
 
-# After this execution, all results across all trials, model configurations, and feature selection methods will be generated, saved, and printed.
+    # Get the list of selected trials, models, and feature selection methods based on the user's input (command-line arguments)
+    selected_trials = get_selected_trials(args)
+    selected_models = get_selected_models(args)
+    selected_features = get_selected_features(args)
+
+    # If the user specified the --run_all flag, run all combinations of
+    # trials, models, and feature selection methods.
+    if args.run_all:
+        print("Running all combinations of trials, models, and feature selection methods.")
+        selected_trials = trials_info.keys()  # Use all trials
+        selected_models = model_configs.keys()  # Use all models
+        selected_features = feature_selection_methods  # Use all feature selection methods
+
+    # Prepare the device data by creating a mapping of device IDs to the corresponding RF data.
+    # X is the data and y contains the labels, which are already preprocessed.
+    device_rf_data = {device: X[y == idx] for device, idx in device_id_mapping.items()}
+
+    # Call the function to train models for each trial, model, and feature selection method.
+    all_results, all_adr_results = train_model_per_trial(
+        device_rf_data,
+        {trial: trials_info[trial] for trial in selected_trials},  # Select the relevant trials
+        {model: model_configs[model] for model in selected_models},  # Select the relevant models
+        selected_features  # Use the selected feature selection methods
+    )
+
+if __name__ == "__main__":
+    main()
