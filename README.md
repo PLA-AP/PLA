@@ -128,11 +128,23 @@ When you run the `RF_Fingerprint.py` script with the default settings, you will 
 
 ### **Estimated Time to Run Experiments**
 Below are approximate times for running the experiments based on our hardware configuration (e.g., Intel i7-9700K, 32GB RAM):
-- **Recursive Feature Elimination (RFE)**: ~3 hours
-- **XGBoost (with RFE)**: ~2 hours
-- **XGBoost (with RFE)**: ~30 minutes
-- **Random Forest**: ~20 minutes
-- **Logistic Regression**: ~10 minutes
+### Execution Times for Trial 1 and Trial 2
+
+| Model          | ANOVA   | MI     | PCA    | RFE     |
+|----------------|---------|--------|--------|---------|
+| **Trial 1**    |         |        |        |         |
+| Random Forest  | 1:45    | 3:09   | 1:34   | 1:26:42 |
+| SUM            | 3:15    | 18:49  | 4:35   | 3:10:38 |
+| KNN            | 5:65    | 24:42  | 5:35   | 3:38:47 |
+| XGB            | 2:14    | 34:13  | 1:57   | 3:56:04 |
+| LR             | 3:75    | 22:18  | 1:75   | 3:36:04 |
+| **Trial 2**    |         |        |        |         |
+| Random Forest  | 2:45    | 1:16   | 3:40   | 1:54:03 |
+| SUM            | 54      | 26:44  | 1:09   | 4:39:52 |
+| KNN            | NS      | 24:22  | 1:17   | 1:55:10 |
+| XGB            | 3:14    | 80:49  | 3:02   | 4:42:09 |
+| LR             | 34      | 26:30  | 1:00   | 3:34:49 |
+
 
 > **Note**: The time may vary depending on the hardware and specific system setup.
 
