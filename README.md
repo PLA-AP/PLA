@@ -103,8 +103,35 @@ This section summarizes the main results you should expect when running the prov
 To run the experiments and automatically test different combinations of machine learning models, feature selection methods, and scenarios, simply execute the following script:
 
 ```bash
-python RF_Fingerprint.py
+python RF_Fingerprint.py --trial trial_x --model x --feature x
 ```
+You can customize the execution by specifying trials, models, and feature selection methods through the following command-line arguments:
+#### **Command-Line Arguments**
+- **`--trial`**:  Specify one or more trials to run (e.g., `trial_1`, `trial_2`, `trial_3`). Leave it blank to run all trials.
+- **`--model`**: Choose specific machine learning models to use (e.g., `random_forest`, `svc`,'knn','xgb', and 'logistic_regression'). Leave this blank to run all available models.
+- **`--feature`**:  Select one or more feature selection methods (e.g., `pca`, `anova`, 'mutual_info', 'rfe' ). If omitted, the script will test all available methods.
+- **`--run_all`**:  The script will run all combinations of trials, models, and feature selection methods.
+##### **Example Usage**
+Here are some examples of how to run the experiments with different configurations:
+
+##### 1. **Run All Combinations of Trials, Models, and Features**
+
+   To run all trials, models, and feature selection methods, use the following command:
+
+   ```bash
+   python RF_Fingerprint.py --run_all
+   ```
+##### 2. **Run a Specific Trial with Specific Models and Features**
+To run `trial_1` and `trial_2` using the `random_forest` and `svc` models, with `pca` and `anova` for feature selection:
+   ```bash
+python RF_Fingerprint.py --trial trial_1 trial_2 --model random_forest svc --feature pca anova
+```
+##### 2. **Run All Models for All Trials with a Specific Feature Selection Method**
+To run all trials and models but only use pca for feature selection: 
+```bash
+python RF_Fingerprint.py --feature pca
+```
+
 ### **Expected Output**
 
 When you run the `RF_Fingerprint.py` script with the default settings, you will obtain the following performance metrics:
