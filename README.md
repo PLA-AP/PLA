@@ -108,8 +108,8 @@ python RF_Fingerprint.py --trial trial_x --model x --feature x
 You can customize the execution by specifying trials, models, and feature selection methods through the following command-line arguments:
 #### **Command-Line Arguments**
 - **`--trial`**:  Specify one or more trials to run (e.g., `trial_1`, `trial_2`, `trial_3`). Leave this argument blank to run all available trials.
-- **`--model`**: Choose specific machine learning models to use (e.g., `random_forest`, `svc`,'knn','xgb', and 'logistic_regression'). Leave blank to test all models.
-- **`--feature`**:  Select one or more feature selection methods (e.g., `pca`, `anova`, 'mutual_info', 'rfe' ). Leave this argument blank to test all available feature selection methods.
+- **`--model`**: Choose specific machine learning models to use (e.g., `random_forest`, `svc`,`knn`,`xgb`, and `logistic_regression`). Leave blank to test all models.
+- **`--feature`**:  Select one or more feature selection methods (e.g., `pca`, `anova`, `mutual_info`, `rfe` ). Leave this argument blank to test all available feature selection methods.
 - **`--run_all`**:  The script will run all combinations of trials, models, and feature selection methods.
 ##### **Example Usage**
 Here are some examples of how to run the experiments with different configurations:
