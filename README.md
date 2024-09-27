@@ -150,7 +150,7 @@ Below are approximate times for running the experiments based on our hardware co
 | **Logistic Regression** | ANOVA     | 00:37     | 00:34     |00:48       |
 |                | MI                | 22:18     | 25:50     |40:05      |
 |                | PCA               | 00:17     | 01:00     |01:22      |
-|                | RFE               | 3:39:36   | 3:34:49   |5:28:24       |
+|                | RFE               | 3:39:36   | 3:34:49   |5:50:52       |
 
 
 
