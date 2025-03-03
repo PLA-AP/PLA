@@ -208,13 +208,11 @@ For detailed instructions on setting up the environment, running experiments, an
 If you use this code in your research, please cite the following paper:
 
 ```bibtex
-@article{YourArticle,
-  title={Your Title},
-  author={Your Name and Others},
-  journal={Journal Name},
-  year={2024},
-  volume={XX},
-  pages={XX-XX},
-  doi={XX.XXXX/XXXXXX},
+@inproceedings{alla2024robust,
+  title={Robust Device Authentication in Multi-Node Networks: ML-Assisted Hybrid PLA Exploiting Hardware Impairments},
+  author={Alla, Ildi and Yahia, Selma and Loscri, Valeria and Eldeeb, Hossien},
+  booktitle={Annual Computer Security Applications Conference (ACSAC)},
+  year={2024}
 }
+
 ```
